@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="customEditorConfigurer" class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+        <property name="customEditors">
+            <map>
+                <!--*********此处巨坑，因为新版本的原因，不能再注入一个bean，而是注入对应的类*******-->
+                <entry key="java.util.Date" value="com.obaibai.www.propertie.DatePropertyEditor">
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+
+    <bean id="datePro" class="com.obaibai.www.propertie.DatePro">
+        <property name="date">
+            <value>2019-1-1 11:11:11</value>
+        </property>
+    </bean>
+</beans>
