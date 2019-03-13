@@ -8,7 +8,7 @@ public class DatePro {
 
     private Date date;
 
-
+    private Long id;
 
     public Date getDate() {
         return date;
